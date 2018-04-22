@@ -1,6 +1,6 @@
 const appData = {
   autoRefresh: true,
-  refreshInterval: 1000,
+  refreshInterval: Math.floor(1000 / 30),
   gsTime: 0,
   me: [-1, -1, 0, 0],
   meGuid: -1,
