@@ -1,6 +1,6 @@
 const appData = {
   autoRefresh: true,
-  refreshInterval: Math.floor(1000 / 30),
+  refreshInterval: 1000,
   gsTime: 0,
   me: [-1, -1, 0, 0],
   meGuid: -1,
@@ -104,7 +104,7 @@ vapp = new Vue({
       // }
       // if (this.showItemAR) {
       //   flags |= 0b0000011000000000 // 步枪和配件
-      // }
+      // }          
       // if (this.showItemSR) {
       //   flags |= 0b0000000110000000 // 狙击和配件
       // }
@@ -117,98 +117,104 @@ vapp = new Vue({
       // if (this.showItemAmmo) {
       //   flags |= 0b0000000000100000
       // }
-      if (this.showBack) {
-        flags |= 0b00000000000000000000000000001000
+      if (this.showBack2) {
+        flags |= 0b0000000000010000
+      }
+	  if (this.showBack3) {
+        flags |= 0b1000000000010000
       }
       if (this.showArmor2) {
-        flags |= 0b00000000000000000000000100000000
+        flags |= 0b0000000000010000
       }
       if (this.showHead2) {
-        flags |= 0b00000000000000000000000000000100
-      }
+        flags |= 0b0000000000010000
+      }           
       if (this.showArmor3) {
-        flags |= 0b00000000000000000000000010000000
+        flags |= 0b1000000000010000
       }
       if (this.showHead3) {
-        flags |= 0b00000000000000000000000000000010
+        flags |= 0b1000000000010000
       }
       if (this.showFirstAid) {
-        flags |= 0b00000000000000000000000000100000
+        flags |= 0b0100100000000000
       }
       if (this.showMedKit) {
-        flags |= 0b00000000000000000000000000010000
+        flags |= 0b1000100000000000
+      }
+	   if (this.showBandage) {
+        flags |= 0b0000100000000000
       }
       if (this.showDrink) {
-        flags |= 0b00000000000000000000000001000000
+        flags |= 0b0100100000000000
       }
       if (this.showGrenade) {
-        flags |= 0b00000000000100000000000000000000
+        flags |= 0b0100000001000000
       }
       if (this.showSmokeBomb) {
-        flags |= 0b00000000000010000000000000000000
+        flags |= 0b0000000001000000
       }
       if (this.showAmmo556) {
-        flags |= 0b00000000000000000000010000000000
+        flags |= 0b0000000000100000
       }
       if (this.showAmmo762) {
-        flags |= 0b00000000000000000000001000000000
-      }
-      if (this.showForeGrip) {
-        flags |= 0b10000000000000000000000000000000
-      }
+        flags |= 0b0000000000100000
+      }  
       if (this.showLowST) {
-        flags |= 0b00000000010000000000000000000000
+        flags |= 0b0001000000000000
       }
       if (this.showHighST) {
-        flags |= 0b00000000001000000000000000000000
+        flags |= 0b1001000000000000
       }
       if (this.showARCnFH) {
-        flags |= 0b00100000000000000000000000000000
+        flags |= 0b0000001000000000
       }
       if (this.showARSuppressor) {
-        flags |= 0b00010000000000000000000000000000
+        flags |= 0b1000001000000000
       }
       if (this.showARExtended) {
-        flags |= 0b01000000000000000000000000000000
+        flags |= 0b0000001000000000
       }
       if (this.showARStock) {
-        flags |= 0b00001000000000000000000000000000
+        flags |= 0b0000001000000000
       }
       if (this.showSRFlashHider) {
-        flags |= 0b00000010000000000000000000000000
+        flags |= 0b0000000010000000
       }
       if (this.showSRSuppressor) {
-        flags |= 0b00000001000000000000000000000000
+        flags |= 0b1000000010000000
       }
       if (this.showSRExtended) {
-        flags |= 0b00000100000000000000000000000000
+        flags |= 0b0000000010000000
       }
-      if (this.showSRStock) {
-        flags |= 0b00000000100000000000000000000000
+	  if (this.showFlashBang) {
+        flags |= 0b0000000001000000
+      }
+	  if (this.showMolotov) {
+        flags |= 0b0000000001000000
       }
       if (this.showM16A4) {
-        flags |= 0b00000000000001000000000000000000
+        flags |= 0b0000010000000000
       }
       if (this.showSCAR) {
-        flags |= 0b00000000000000010000000000000000
+        flags |= 0b0010010000000000
       }
       if (this.showAK47) {
-        flags |= 0b00000000000000001000000000000000
+        flags |= 0b0000010000000000
       }
       if (this.showHK416) {
-        flags |= 0b00000000000000100000000000000000
+        flags |= 0b0010010000000000
       }
       if (this.showPan) {
-        flags |= 0b00000000000000000000100000000000
+        flags |= 0b0000000000010000
       }
       if (this.showMini14) {
-        flags |= 0b00000000000000000001000000000000
+        flags |= 0b0000000100000000
       }
       if (this.showSKS) {
-        flags |= 0b00000000000000000010000000000000
+        flags |= 0b0010000100000000
       }
       if (this.showKar98k) {
-        flags |= 0b00000000000000000100000000000000
+        flags |= 0b0010000100000000
       }
       return flags
     }
@@ -302,6 +308,11 @@ const carSvg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlin
 const carSvgImg = new Image()
 carSvgImg.src = 'data:image/svg+xml,' + escape(carSvg)
 
+const carRedSvg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">' +
+'<path fill="#FF2020FF" id="svg_2" d="m9.86048,0.09798l-3.95767,0c-1.04907,0 -1.89924,1.16687 -1.89924,2.21595l0,11.71383c0,1.04874 0.85016,1.89958 1.89924,1.89958l3.95767,0c1.04874,0 1.89958,-0.8505 1.89958,-1.89958l0,-11.71383c-0.00067,-1.04907 -0.85084,-2.21595 -1.89958,-2.21595zm1.56671,4.77519l0,3.92604l-0.91849,0.11813l0,-1.61753l0.91849,-2.42664zm-0.48196,-1.14937c-0.34195,1.31261 -0.74684,2.86417 -0.74684,2.86417l-4.63383,0l-0.74785,-2.86417c0.00034,0 2.99005,-1.01575 6.12852,0zm-5.68022,3.68203l0,1.51185l-0.91882,-0.11746l0,-3.82137l0.91882,2.42697zm-0.91882,5.46078l0,-3.48648l0.91882,0.11544l0,2.75849l-0.91882,0.61255zm0.52403,0.99085l0.7465,-1.12278l4.63484,0l0.74684,1.12278l-6.12819,0zm5.63848,-1.70874l0,-2.64944l0.91849,-0.11948l0,3.38181l-0.91849,-0.61289z"/></svg>'
+const carRedSvgImg = new Image()
+carRedSvgImg.src = 'data:image/svg+xml,' + escape(carRedSvg)
+
 const boxSvg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">' +
 '<path fill="#FFC107D0" d="m7.90051,0.27295c-3.58696,0 -6.49475,2.90779 -6.49475,6.49475l0,4.54633l0,0.02888l0.00069,0c0.01459,0.58708 0.47052,1.21066 1.02621,1.3959l2.22047,0.74014l0,1.29895c0,0.59535 0.48711,1.08246 1.08246,1.08246l4.32983,0c0.59535,0 1.08246,-0.48711 1.08246,-1.08246l0,-1.29895l2.22047,-0.74014c0.55569,-0.18523 1.01162,-0.80886 1.02621,-1.3959l0.00069,0l0,-0.02888l0,-4.54633c0,-3.58696 -2.90779,-6.49475 -6.49475,-6.49475zm2.38141,6.92773c1.07609,0 1.94843,0.87229 1.94843,1.94843s-0.87233,1.94843 -1.94843,1.94843s-1.94843,-0.87229 -1.94843,-1.94843s0.87229,-1.94843 1.94843,-1.94843zm-4.76282,0c1.07614,0 1.94843,0.87229 1.94843,1.94843s-0.87229,1.94843 -1.94843,1.94843s-1.94843,-0.87229 -1.94843,-1.94843s0.87229,-1.94843 1.94843,-1.94843zm3.24738,5.1958c0,0.47827 -0.38769,0.86597 -0.86597,0.86597s-0.86597,-0.38769 -0.86597,-0.86597s0.86597,-1.73193 0.86597,-1.73193s0.86597,1.25366 0.86597,1.73193z"></path></svg>'
 const boxSvgImg = new Image()
@@ -330,7 +341,12 @@ const apawnStyleFunc = function (feature) {
       apawnImg = boxSvgImg
       break
     case 'CAR':
-      apawnImg = carSvgImg
+      const carLabel = this.get('_label') || ''
+      if (carLabel == '') {
+        apawnImg = carSvgImg
+      } else {
+        apawnImg = carRedSvgImg
+      }
       break
     default:
       break
@@ -454,7 +470,7 @@ const safeCircle = new ol.Feature({
   geometry: new ol.geom.Circle([-1, -1], 100)
 })
 safeCircle.setId('safe')
-safeCircle.set('_color', 'rgba(255,255,255,0.9)')
+safeCircle.set('_color', 'rgba(0,0,255,0.9)')
 safeCircle.setStyle(zoneStyleFunc)
 gridSource.addFeature(safeCircle)
 
@@ -462,7 +478,7 @@ const poisonCircle = new ol.Feature({
   geometry: new ol.geom.Circle([-1, -1], 0)
 })
 poisonCircle.setId('poison')
-poisonCircle.set('_color', 'rgba(0,0,255,0.9)')
+poisonCircle.set('_color', 'rgba(255,255,255,0.9)')
 poisonCircle.setStyle(zoneStyleFunc)
 gridSource.addFeature(poisonCircle)
 
@@ -522,7 +538,7 @@ const meStyleFunc = function (feature) {
       }),
       stroke : new ol.style.Stroke({
         width : this.get('_radius') - 1,
-        color : 'rgba(239,108,0,1)'
+        color : 'rgba(64,255,64,1)'
       })
     }),
   })
@@ -531,7 +547,7 @@ const meStyleFunc = function (feature) {
   if (lineGeo)
   result.push(new ol.style.Style({
     geometry: this.get('_lineGeo'),
-    stroke: new ol.style.Stroke({ color: 'rgba(239,108,0,0.8)', width: 2.2 })
+    stroke: new ol.style.Stroke({ color: 'rgba(64,255,64,1)', width: 2.2 })
   }))
   return result
 }
