@@ -42,8 +42,29 @@ vapp = new Vue({
 
     // --------------------------------------------------------------------------
 
-   showLowST: false,
+    showBack: false,
+    showArmor2: false,
+    showHead2: false,
+    showArmor3: false,
+    showHead3: false,
+    showFirstAid: false,
+    showMedKit: false,
+    showDrink: false,
+    showGrenade: false,
+    showSmokeBomb: false,
+    showAmmo556: false,
+    showAmmo762: false,
+    showForeGrip: false,
+    showLowST: false,
     showHighST: false,
+    showARCnFH: false,
+    showARSuppressor: false,
+    showARExtended: false,
+    showARStock: false,
+    showSRFlashHider: false,
+    showSRSuppressor: false,
+    showSRExtended: false,
+    showSRStock: false,
     showM16A4: false,
     showSCAR: false,
     showAK47: false,
@@ -72,29 +93,122 @@ vapp = new Vue({
         return 0b11111111111111111111111111111111
       }
       let flags = 0
-      if (this.showItemTop) {
-        flags |= 0b1000000000000000
+      // if (this.showItemTop) {
+      //   flags |= 0b1000000000000000
+      // }
+      // if (this.showItemDuoDuo) {
+      //   flags |= 0b0100000000000000 // 雷 水 疼 急
+      // }
+      // if (this.showItemBasic) {
+      //   flags |= 0b0001010100010000 // 基本出装: 穿戴 | 步枪 | 瞄准 | 狙枪
+      // }
+      // if (this.showItemAR) {
+      //   flags |= 0b0000011000000000 // 步枪和配件
+      // }
+      // if (this.showItemSR) {
+      //   flags |= 0b0000000110000000 // 狙击和配件
+      // }
+      // if (this.showItemHealth) {
+      //   flags |= 0b0000100000000000
+      // }
+      // if (this.showItemThrow) {
+      //   flags |= 0b0000000001000000
+      // }
+      // if (this.showItemAmmo) {
+      //   flags |= 0b0000000000100000
+      // }
+      if (this.showBack) {
+        flags |= 0b00000000000000000000000000001000
       }
-      if (this.showItemDuoDuo) {
-        flags |= 0b0100000000000000 // 雷 水 疼 急
+      if (this.showArmor2) {
+        flags |= 0b00000000000000000000000100000000
       }
-      if (this.showItemBasic) {
-        flags |= 0b0001010100010000 // 基本出装: 穿戴 | 步枪 | 瞄准 | 狙枪
+      if (this.showHead2) {
+        flags |= 0b00000000000000000000000000000100
       }
-      if (this.showItemAR) {
-        flags |= 0b0000011000000000 // 步枪和配件
-      }          
-      if (this.showItemSR) {
-        flags |= 0b0000000110000000 // 狙击和配件
+      if (this.showArmor3) {
+        flags |= 0b00000000000000000000000010000000
       }
-      if (this.showItemHealth) {
-        flags |= 0b0000100000000000
+      if (this.showHead3) {
+        flags |= 0b00000000000000000000000000000010
       }
-      if (this.showItemThrow) {
-        flags |= 0b0000000001000000
+      if (this.showFirstAid) {
+        flags |= 0b00000000000000000000000000100000
+      }
+      if (this.showMedKit) {
+        flags |= 0b00000000000000000000000000010000
+      }
+      if (this.showDrink) {
+        flags |= 0b00000000000000000000000001000000
+      }
+      if (this.showGrenade) {
+        flags |= 0b00000000000100000000000000000000
+      }
+      if (this.showSmokeBomb) {
+        flags |= 0b00000000000010000000000000000000
+      }
+      if (this.showAmmo556) {
+        flags |= 0b00000000000000000000010000000000
+      }
+      if (this.showAmmo762) {
+        flags |= 0b00000000000000000000001000000000
+      }
+      if (this.showForeGrip) {
+        flags |= 0b10000000000000000000000000000000
+      }
+      if (this.showLowST) {
+        flags |= 0b00000000010000000000000000000000
       }
       if (this.showHighST) {
-        flags |= 0b1001000000000000
+        flags |= 0b00000000001000000000000000000000
+      }
+      if (this.showARCnFH) {
+        flags |= 0b00100000000000000000000000000000
+      }
+      if (this.showARSuppressor) {
+        flags |= 0b00010000000000000000000000000000
+      }
+      if (this.showARExtended) {
+        flags |= 0b01000000000000000000000000000000
+      }
+      if (this.showARStock) {
+        flags |= 0b00001000000000000000000000000000
+      }
+      if (this.showSRFlashHider) {
+        flags |= 0b00000010000000000000000000000000
+      }
+      if (this.showSRSuppressor) {
+        flags |= 0b00000001000000000000000000000000
+      }
+      if (this.showSRExtended) {
+        flags |= 0b00000100000000000000000000000000
+      }
+      if (this.showSRStock) {
+        flags |= 0b00000000100000000000000000000000
+      }
+      if (this.showM16A4) {
+        flags |= 0b00000000000001000000000000000000
+      }
+      if (this.showSCAR) {
+        flags |= 0b00000000000000010000000000000000
+      }
+      if (this.showAK47) {
+        flags |= 0b00000000000000001000000000000000
+      }
+      if (this.showHK416) {
+        flags |= 0b00000000000000100000000000000000
+      }
+      if (this.showPan) {
+        flags |= 0b00000000000000000000100000000000
+      }
+      if (this.showMini14) {
+        flags |= 0b00000000000000000001000000000000
+      }
+      if (this.showSKS) {
+        flags |= 0b00000000000000000010000000000000
+      }
+      if (this.showKar98k) {
+        flags |= 0b00000000000000000100000000000000
       }
       return flags
     }
