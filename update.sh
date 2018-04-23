@@ -4,6 +4,7 @@ echo "即将搭建的是随的4.23版本"
 echo "请输入交流群号"
 read -p "交流群： " qun
 
+cd root/
 curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
 source ~/.bash_profile
 nvm install v9.8.0
