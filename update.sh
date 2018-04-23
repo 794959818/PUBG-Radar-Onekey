@@ -19,10 +19,6 @@ make
 make install
 
 
-
-yum install git
-git clone https://github.com/chaojibinbin/winnerpubg.git
-cd winnerpubg/
 npm i
 npm i -g pino
 npm install -g forever
@@ -35,3 +31,4 @@ chmod +x shadowsocks-all.sh
 
 
 echo "搭建完成"
+
