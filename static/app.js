@@ -1,6 +1,6 @@
 const appData = {
   autoRefresh: true,
-  refreshInterval: 1000,
+  refreshInterval: Math.floor(1000 / 30),
   gsTime: 0,
   me: [-1, -1, 0, 0],
   meGuid: -1,
@@ -30,9 +30,9 @@ vapp = new Vue({
     showAirDrop: true,
     showCar: true,
 
-    showItemTop: true,
-    showItemDuoDuo: true,
-    showItemBasic: true,
+    showItemTop: false,
+    showItemDuoDuo: false,
+    showItemBasic: false,
     showItemAR: false,
     showItemSR: false,
     showItemHealth: false,
@@ -42,37 +42,16 @@ vapp = new Vue({
 
     // --------------------------------------------------------------------------
 
-    showBack: true,
-    showArmor2: true,
-    showHead2: true,
-    showArmor3: true,
-    showHead3: true,
-    showFirstAid: true,
-    showMedKit: true,
-    showDrink: true,
-    showGrenade: true,
-    showSmokeBomb: false,
-    showAmmo556: false,
-    showAmmo762: false,
-    showForeGrip: false,
-    showLowST: false,
-    showHighST: true,
-    showARCnFH: false,
-    showARSuppressor: true,
-    showARExtended: false,
-    showARStock: false,
-    showSRFlashHider: false,
-    showSRSuppressor: true,
-    showSRExtended: false,
-    showSRStock: false,
+   showLowST: false,
+    showHighST: false,
     showM16A4: false,
-    showSCAR: true,
+    showSCAR: false,
     showAK47: false,
-    showHK416: true,
-    showPan: true,
+    showHK416: false,
+    showPan: false,
     showMini14: false,
     showSKS: false,
-    showKar98k: true,
+    showKar98k: false,
 
     // --------------------------------------------------------------------------
 
@@ -93,128 +72,29 @@ vapp = new Vue({
         return 0b11111111111111111111111111111111
       }
       let flags = 0
-      // if (this.showItemTop) {
-      //   flags |= 0b1000000000000000
-      // }
-      // if (this.showItemDuoDuo) {
-      //   flags |= 0b0100000000000000 // 雷 水 疼 急
-      // }
-      // if (this.showItemBasic) {
-      //   flags |= 0b0001010100010000 // 基本出装: 穿戴 | 步枪 | 瞄准 | 狙枪
-      // }
-      // if (this.showItemAR) {
-      //   flags |= 0b0000011000000000 // 步枪和配件
-      // }          
-      // if (this.showItemSR) {
-      //   flags |= 0b0000000110000000 // 狙击和配件
-      // }
-      // if (this.showItemHealth) {
-      //   flags |= 0b0000100000000000
-      // }
-      // if (this.showItemThrow) {
-      //   flags |= 0b0000000001000000
-      // }
-      // if (this.showItemAmmo) {
-      //   flags |= 0b0000000000100000
-      // }
-      if (this.showBack2) {
-        flags |= 0b0000000000010000
+      if (this.showItemTop) {
+        flags |= 0b1000000000000000
       }
-	  if (this.showBack3) {
-        flags |= 0b1000000000010000
+      if (this.showItemDuoDuo) {
+        flags |= 0b0100000000000000 // 雷 水 疼 急
       }
-      if (this.showArmor2) {
-        flags |= 0b0000000000010000
+      if (this.showItemBasic) {
+        flags |= 0b0001010100010000 // 基本出装: 穿戴 | 步枪 | 瞄准 | 狙枪
       }
-      if (this.showHead2) {
-        flags |= 0b0000000000010000
-      }           
-      if (this.showArmor3) {
-        flags |= 0b1000000000010000
+      if (this.showItemAR) {
+        flags |= 0b0000011000000000 // 步枪和配件
+      }          
+      if (this.showItemSR) {
+        flags |= 0b0000000110000000 // 狙击和配件
       }
-      if (this.showHead3) {
-        flags |= 0b1000000000010000
-      }
-      if (this.showFirstAid) {
-        flags |= 0b0100100000000000
-      }
-      if (this.showMedKit) {
-        flags |= 0b1000100000000000
-      }
-	   if (this.showBandage) {
+      if (this.showItemHealth) {
         flags |= 0b0000100000000000
       }
-      if (this.showDrink) {
-        flags |= 0b0100100000000000
-      }
-      if (this.showGrenade) {
-        flags |= 0b0100000001000000
-      }
-      if (this.showSmokeBomb) {
+      if (this.showItemThrow) {
         flags |= 0b0000000001000000
-      }
-      if (this.showAmmo556) {
-        flags |= 0b0000000000100000
-      }
-      if (this.showAmmo762) {
-        flags |= 0b0000000000100000
-      }  
-      if (this.showLowST) {
-        flags |= 0b0001000000000000
       }
       if (this.showHighST) {
         flags |= 0b1001000000000000
-      }
-      if (this.showARCnFH) {
-        flags |= 0b0000001000000000
-      }
-      if (this.showARSuppressor) {
-        flags |= 0b1000001000000000
-      }
-      if (this.showARExtended) {
-        flags |= 0b0000001000000000
-      }
-      if (this.showARStock) {
-        flags |= 0b0000001000000000
-      }
-      if (this.showSRFlashHider) {
-        flags |= 0b0000000010000000
-      }
-      if (this.showSRSuppressor) {
-        flags |= 0b1000000010000000
-      }
-      if (this.showSRExtended) {
-        flags |= 0b0000000010000000
-      }
-	  if (this.showFlashBang) {
-        flags |= 0b0000000001000000
-      }
-	  if (this.showMolotov) {
-        flags |= 0b0000000001000000
-      }
-      if (this.showM16A4) {
-        flags |= 0b0000010000000000
-      }
-      if (this.showSCAR) {
-        flags |= 0b0010010000000000
-      }
-      if (this.showAK47) {
-        flags |= 0b0000010000000000
-      }
-      if (this.showHK416) {
-        flags |= 0b0010010000000000
-      }
-      if (this.showPan) {
-        flags |= 0b0000000000010000
-      }
-      if (this.showMini14) {
-        flags |= 0b0000000100000000
-      }
-      if (this.showSKS) {
-        flags |= 0b0010000100000000
-      }
-      if (this.showKar98k) {
-        flags |= 0b0010000100000000
       }
       return flags
     }

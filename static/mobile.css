@@ -8,7 +8,7 @@ html { overflow-y: hidden; }
 
 /* The sidebar menu */
 .sidenav {
-  opacity:0.9;
+  opacity:1;
   height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 70%; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
@@ -17,7 +17,7 @@ html { overflow-y: hidden; }
   left: 0;
   background-color: rgba(0,0,0,0); 
   overflow-x: hidden; /* Disable horizontal scroll */
- color:#ffff00
+ color:#ffffff
 }
 /* Style page content */
 #map {
