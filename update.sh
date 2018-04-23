@@ -19,7 +19,7 @@ cd libpcap-1.8.1
 make
 make install
 
-
+cd winnnerpubg/
 npm i
 npm i -g pino
 npm install -g forever
