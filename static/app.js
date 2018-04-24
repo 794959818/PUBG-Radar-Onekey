@@ -1,6 +1,6 @@
 const appData = {
   autoRefresh: true,
-  refreshInterval: Math.floor(1000 / 30),
+  refreshInterval: Math.floor(1000 / 60),
   gsTime: 0,
   me: [-1, -1, 0, 0],
   meGuid: -1,
@@ -42,11 +42,11 @@ vapp = new Vue({
 
     // --------------------------------------------------------------------------
 
-    showBack: false,
-    showArmor2: false,
-    showHead2: false,
-    showArmor3: false,
-    showHead3: false,
+    showBack: true,
+    showArmor2: true,
+    showHead2: true,
+    showArmor3: true,
+    showHead3: true,
     showFirstAid: false,
     showMedKit: false,
     showDrink: false,
@@ -65,14 +65,14 @@ vapp = new Vue({
     showSRSuppressor: false,
     showSRExtended: false,
     showSRStock: false,
-    showM16A4: false,
-    showSCAR: false,
-    showAK47: false,
-    showHK416: false,
-    showPan: false,
-    showMini14: false,
-    showSKS: false,
-    showKar98k: false,
+    showM16A4: true,
+    showSCAR: true,
+    showAK47: true,
+    showHK416: true,
+    showPan: true,
+    showMini14: true,
+    showSKS: true,
+    showKar98k: true,
 
     // --------------------------------------------------------------------------
 
