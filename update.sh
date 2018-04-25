@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "欢迎使用网页雷达一键脚本"
+echo "交流QQ群552120999"
 echo "即将搭建的是随的4.23版本"
 echo "请输入交流群号"
 read -p "交流群： " qun
@@ -28,8 +28,8 @@ cd libpcap-1.8.1
 make
 make install
 
-git clone https://github.com/chaojibinbin/winnerpubg.git
-cd winnerpubg/
+git clone https://github.com/794959818/yijian.git
+cd wyijian/
 npm i
 npm i -g pino
 npm install -g forever
