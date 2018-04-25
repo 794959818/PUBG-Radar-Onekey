@@ -29,7 +29,7 @@ make
 make install
 
 git clone https://github.com/794959818/yijian.git
-cd wyijian/
+cd yijian/
 npm i
 npm i -g pino
 npm install -g forever
