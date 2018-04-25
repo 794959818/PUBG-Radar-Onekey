@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "欢迎使用一键搭建"
 echo "即将搭建的是4.23版本"
-echo "请输入交流群号"
-read -p "交流群： " qun
+echo "准备开始安装"
+read -p "任意键开始安装"
 echo "请输入你的内网ip" 
 read -p "内网ip： " ip
 cp /root/winnerpubg/restart.sh /root/restart.sh
