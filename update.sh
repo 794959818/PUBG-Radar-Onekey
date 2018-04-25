@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "交流QQ群552120999"
+echo "欢迎使用"
 echo "即将搭建的是4.23版本"
 echo "请输入交流群号"
 read -p "交流群： " qun
