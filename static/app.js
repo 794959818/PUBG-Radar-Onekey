@@ -1,6 +1,6 @@
 const appData = {
   autoRefresh: true,
-  refreshInterval: Math.floor(1000 / 60),
+  refreshInterval: 1000,
   gsTime: 0,
   me: [-1, -1, 0, 0],
   meGuid: -1,
@@ -30,9 +30,9 @@ vapp = new Vue({
     showAirDrop: true,
     showCar: true,
 
-    showItemTop: false,
-    showItemDuoDuo: false,
-    showItemBasic: false,
+    showItemTop: true,
+    showItemDuoDuo: true,
+    showItemBasic: true,
     showItemAR: false,
     showItemSR: false,
     showItemHealth: false,
@@ -47,31 +47,31 @@ vapp = new Vue({
     showHead2: true,
     showArmor3: true,
     showHead3: true,
-    showFirstAid: false,
-    showMedKit: false,
-    showDrink: false,
-    showGrenade: false,
+    showFirstAid: true,
+    showMedKit: true,
+    showDrink: true,
+    showGrenade: true,
     showSmokeBomb: false,
     showAmmo556: false,
     showAmmo762: false,
     showForeGrip: false,
     showLowST: false,
-    showHighST: false,
+    showHighST: true,
     showARCnFH: false,
-    showARSuppressor: false,
+    showARSuppressor: true,
     showARExtended: false,
     showARStock: false,
     showSRFlashHider: false,
-    showSRSuppressor: false,
+    showSRSuppressor: true,
     showSRExtended: false,
     showSRStock: false,
-    showM16A4: true,
+    showM16A4: false,
     showSCAR: true,
-    showAK47: true,
+    showAK47: false,
     showHK416: true,
     showPan: true,
-    showMini14: true,
-    showSKS: true,
+    showMini14: false,
+    showSKS: false,
     showKar98k: true,
 
     // --------------------------------------------------------------------------
@@ -678,18 +678,18 @@ const renderMap = () => {
       )
     } else { // enemy
       if (playerObj.team) {
-        label = `队${playerObj.team}`
+        label = `${playerObj.team}`
       } else if (playerObj.name) {
         label = playerObj.name
       } else {
-        label = `<${playerObj.guid}>`
+        label = `<${playerObj.name}>`
       }
       if (playerObj.kills) {
-        label += `杀${playerObj.kills}`
+        label += ` |杀:${playerObj.kills}|`
       }
     }
     if (playerObj.health != null) {
-      label += `血${Math.floor(playerObj.health)}`
+      label += ` |血:${Math.floor(playerObj.health)}|`
     }
     feature.set('_label', label)
     // re-add should be fine

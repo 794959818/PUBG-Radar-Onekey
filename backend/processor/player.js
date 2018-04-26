@@ -23,14 +23,14 @@ function processPlayer (buf, actor, repObj, waitingHandle, dataOut, iteration) {
         dataOut.disappear = true
       }
       break
-    case 4:
+    case 13:
       buf.readInt(CONSTS.ROLE_MAX) // role
       break
     case 5:
       [ownerGuid, owner] = buf.readObject()
       dataOut.playerOwner = ownerGuid // seems never hit this
       break
-    case 6:
+    case 14:
       const movement = buf.readMovement(true /* isMoving */, true /* isPlayer */)
       if (movement[0] >= 0 && movement[1] >= 0) { // readVecotr sometime might get me negative value, might be a bug
         dataOut.newLoc = movement

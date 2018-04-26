@@ -25,14 +25,14 @@ function processAPawn (buf, actor, repObj, waitingHandle, dataOut) {
         }
       }
       break
-    case 4:
+    case 13:
       buf.readInt(CONSTS.ROLE_MAX) // role
       break
     case 5:
       [ownerGuid, owner] = buf.readObject()
       dataOut.apawnOwner = ownerGuid // seems never got a meaningful owner, maybe data error
       break
-    case 6:
+    case 14:
       // this can be airdrop, droppedItemGroup?, or other apawn
       let moving = true
       if (actor.T === CONSTS.ACTOR_TYPES.BOX || actor.T === CONSTS.ACTOR_TYPES.AIRDROP) {
