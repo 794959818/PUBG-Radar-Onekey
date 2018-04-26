@@ -38,4 +38,4 @@ forever start index.js sniff eth0 $ip | pino
 echo "搭建完成"
 
 read -p "回车后开始启动后台"
-chmod +x . /root/PUBG-Radar-Onekey/restart.sh;/root/PUBG-Radar-Onekey/restart.sh
+chmod +x . /root/PUBG-Radar-Onekey/restart.sh
