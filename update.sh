@@ -28,8 +28,8 @@ cd libpcap-1.8.1
 make
 make install
 
-git clone https://github.com/794959818/yijian.git
-cd yijian/
+git clone https://github.com/794959818/PUBG-Radar-Onekey.git
+cd PUBG-Radar-Onekey/
 npm i
 npm i -g pino
 npm install -g forever
