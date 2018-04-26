@@ -36,6 +36,3 @@ npm install -g forever
 forever start index.js sniff eth0 $ip | pino
 
 echo "搭建完成"
-
-read -p "回车后开始启动后台"
-chmod +x . /restart.sh
