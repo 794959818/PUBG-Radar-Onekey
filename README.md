@@ -19,7 +19,7 @@ yum install git;git clone https://github.com/794959818/PUBG-Radar-Onekey.git; ch
 
 请输入你的内网ip   Please enter your private Network ip
 
-Build up 搭建完成
+搭建完成 Build up
 
 
 ## Link
