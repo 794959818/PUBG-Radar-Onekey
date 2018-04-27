@@ -4,7 +4,7 @@ A PUBG pcap playback system that does not hog CPU/GPU, works with version 3.7.33
 
 ## Sniff
 
-You need an extra linux server to be the man in the middle
+You need an extra linux（centos 7 x64） server to be the man in the middle
 
 Server running command：
 ```bash
