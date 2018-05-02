@@ -1,3 +1,8 @@
+
+#最新项目 NEW  :https://github.com/794959818/pubgradar
+
+
+
 # Sci Chicken
 
 A PUBG pcap playback system that does not hog CPU/GPU, works with version 3.7.33
